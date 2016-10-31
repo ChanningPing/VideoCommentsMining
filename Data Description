@@ -1,0 +1,19 @@
+Data Description
+The data was scraped from the following websites using WebDriver:
+http://www.acfun.tv/v/list96/index.htm
+
+The format of the data:
+Timestamp: the time of the comment relative to the video (in seconds)
+Comment: the actual comment text 
+User_id: the user id of the user that posts this comment
+Date_time: actual date of the comment in Unix time
+Fonts: font of the comment displayed on screen
+Size: size of the texts of the comment
+Color: color of the texts of the comment
+
+Size of the data:
+8 Genres: Action, Animation, Crime, Drama, Fantasy,Historical, Horror, Romance
+80 Movies: 10 movies for each genres (chosen based on high IMDB scores)
+240000 comments: each movie has around 3000~8000 comments.
+
+

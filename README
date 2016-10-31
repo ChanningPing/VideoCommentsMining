@@ -1,0 +1,23 @@
+
+*This project is under publication. Please cite this project for publication.
+Project Proposal
+
+Motivaiton:
+Millions of videos are being watched by users everyday on Youtube, Netflix, ESPN, and so on. The expanding volumn of videos makes it challenging to retrieve finer -evel content of videos. Here by saying finer-level content of video we mean a segment of a video that bears certain topics or sentiment proposed by audience. For example, in the movie of Forrest Gump, which scene depicts "Forrest first running"? and which scene depitcs the "anti-war parade"? in the live stream of popular Youtubers, which part of the live stream is mostly welcomed by the audience? In the presidential debates, what is the main topics that people feel positive or negative about? In sports video, which scene captures neary-goal (but missed eventually) of a team that normal sports report may neglect?
+
+These questions are difficult to answer when there is no data from the audience. Fortunately, recently a new type of video-watching platform provides the functionality where users could type a short comment at any time of a video, and that comment will be flying from right to left on top of the video screen so that other users could see. This mechanism invites user expressing their experiences and emotions about the video at specific time point, and promotes user-interactions. Two examples of the platform are Niconico from Japan(http://www.nicovideo.jp/) and Acfun from China(http://www.acfun.tv/v/list96/index.htm).
+
+Given the textual comments of audience collected from these platforms, the corresponding videos could be broken down to scenes, indexed by topics and sentiments extracted from the comments. Then we can detect the "climax scene" that bears the most intensive  emotions (happy, sad, angry, surprise, etc.) of a video and summarize it with "topics" and "emotions".
+
+Project agenda
+1. Data collection
+The data can be scraped from these platforms using Webdriver scripts. 
+2. Video topic extraction
+First all the comments of the video are segmented based on a small time window. Then all comments within a time window are processed to generated the most representative topic phrases. The processing includes POS tagging, noun-phrase extraction, and ranking of phrases based on tf*idf, point-wise mutual information and entropy.
+3. Video emotion detection
+A small set of the comments are labeld manualy from eight emotions, i.e. trust, anger, anticipation, disgust, joy, fear, sadness, surprise (https://en.wikipedia.org/wiki/Robert_Plutchik). Then bag of n-grams are fed to naive classifiers (SVM, logistic regression) to train the emotion classifier. Later the classifiers are used to classify new comments into eight emotions.
+Emotions of a small time window (similar to topic extraction) are aggregated by their occurrences. Then we can get the fluctuation of different emotions across the entire video. 
+4. Video highlight detection
+Given the video topics and emotions for each time window, a ranking mechanism is proposed to find the most important N-scenes of the video that takes both topic coherence and emotion strength into consideration.
+
+
